@@ -36,6 +36,7 @@ This project is a simple Python application that interacts with an SQLite databa
 
 This project is set up to be used with a development container. You can open it in a containerized environment by using the `.devcontainer` configuration.
 
-## License
+## Feature list of Banking app
+To use the banking app you'll need to go to menu_bank_db.py and run the file to start the program.
+The program has features like viewing all accounts, creating a new bank account, depositing and withdrawing money, and checking account balance.
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
