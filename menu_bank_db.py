@@ -43,7 +43,7 @@ def selection():
     safe = 0
     while safe == 0:
         try:
-            number = int(input('Enter the number of your choice[1-5]:  '))
+            number = int(input('Enter the number of your choice[1-6]:  '))
         except:
             print("Invalid Value try again")
         else:
@@ -105,7 +105,7 @@ def create_account():
 
     results = cursor.execute(f'''
        INSERT INTO bank_accounts (id, name, dollar_amount, account_type) VALUES
-        ({id1}, '{name1}', {initial_deposit1}, '{account_type1}');
+        ({id1}, '{name1}', '{account_type1}');
     ''')
 
     results = cursor.execute(f'''
