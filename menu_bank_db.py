@@ -4,14 +4,22 @@ user_name = "Family"
 password = "password123"
 database_name = "bank_accounts"
 
+
 id1 = 0
 name1 = ""
 account_amount1 = 0.0
 account_type1 = ""
 
 def security_check():
-    input_username = input("Enter username: ")
-    input_password = input("Enter password: ")
+    safe = 0
+    while safe == 0:
+        try:
+            input_username = input("Enter username: ")
+            input_password = input("Enter password: ")
+        except:
+            print("Invalid Value try again")
+        else:
+            safe = 1
 
     if input_username == user_name and input_password == password:
         print("Access granted.")
@@ -21,7 +29,7 @@ def security_check():
         return True
     
 def bank_menu():
-    print("Welcome to the Bank Menu!")
+    print("Welcome to the Texas_branch_bank_app Menu!")
     print("1. View all accounts")
     print("2. Create a new bank account")
     print("3. Deposit money into an account")
@@ -29,22 +37,39 @@ def bank_menu():
     print("5. Check account balance")
     print("6. Exit")
 
+
+
 def selection():
-    number = int(input('Enter the number of your choice[1-5]:  '))
-    if number == 1:
-        view_account()
-    elif number == 2:
-        create_account()
-    elif number == 3:
-        deposit_into_account()
-    elif number == 4:
-        withdraw_into_account()
-    elif number == 5:
-        check_account_balance()
-    elif number == 6:
-        print(f"Have a great day!")
-        return 1
-    return 0
+    safe = 0
+    while safe == 0:
+        try:
+            number = int(input('Enter the number of your choice[1-5]:  '))
+        except:
+            print("Invalid Value try again")
+        else:
+            safe = 1
+    safe = 0
+    while safe == 0:
+        try:
+            if number == 1:
+                view_account()
+            elif number == 2:
+                create_account()
+            elif number == 3:
+                deposit_into_account()
+            elif number == 4:
+                withdraw_into_account()
+            elif number == 5:
+                check_account_balance()
+            elif number == 6:
+                print(f"Have a great day!")
+                return 1
+            return 0
+        except:
+            print("Invalid Value try again")
+        else:
+            safe = 1
+    
 
 def view_account():
     connection = sqlite3.connect('example.db')
